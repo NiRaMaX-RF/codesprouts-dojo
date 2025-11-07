@@ -7,7 +7,7 @@ award:
 
 image: pwncollege/codesprouts-dojo
 
-type: public
+type: hidden
 
 modules:
   - id: web-app

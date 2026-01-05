@@ -6,6 +6,9 @@ rm /challenge/replace_flag_value.sh
 mkdir -p /data/db
 mongod &
 
+sed -i 's/fetch(uw/fetch(location.pathname/g' /challenge/package/client/static/js/main.0cd3e4a0.js
+sed -i 's/pathname:n.pathname/pathname:n.pathname.replace(\/workspace\\\/.*:.*\\\/.*\\\/80\\\/\/g, "workspace\/challenge")/g' /challenge/package/client/static/js/main.0cd3e4a0.js
+
 cd /challenge/package
 ln -s /usr/lib/node_modules .
 node index.js >/var/log/node.log 2>&1 &

@@ -52,6 +52,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "frame-ancestors *"
+  );
+  next();
+});
+
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 app.use(express.static("client"));
 

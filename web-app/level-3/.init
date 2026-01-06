@@ -8,6 +8,7 @@ mongod &
 sed -i 's/"\/workspace\/challenge"/(location.pathname.match(\/^\\\/workspace\\\/.*:.*\\\/.*\\\/80\\\/\/g) ?? ["\/"])[0]/g' /challenge/package/client/static/js/main.1f941a4d.js
 sed -i 's/"\/workspace\/challenge\/"/(location.pathname.match(\/^\\\/workspace\\\/.*:.*\\\/.*\\\/80\\\/\/g) ?? ["\/"])[0]/g' /challenge/package/client/static/js/main.1f941a4d.js
 sed -i 's/fetch(uw+"\//fetch(uw+"/g' /challenge/package/client/static/js/main.1f941a4d.js
+sed -i 's/document.head.appendChild(fS),//g' /challenge/package/client/static/js/main.1f941a4d.js
 
 cd /challenge/package
 ln -s /usr/lib/node_modules .

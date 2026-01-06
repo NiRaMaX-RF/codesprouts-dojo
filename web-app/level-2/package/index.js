@@ -29,12 +29,8 @@ app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
-// STRIP THIS FOR PWN.COLLEGE
 app.use((req, res, next) => {
-  const prefix = '/workspace/challenge';
-  if (req.url.startsWith(prefix)) {
-    req.url = req.url.substring(prefix.length) || '/';
-  }
+  req.url = req.url.replace(/.*((\/static\/(js|css)\/.*)|favicon[.]ico|logo192[.]png|manifest[.]json)$/g, `$1`)
   next();
 });
 

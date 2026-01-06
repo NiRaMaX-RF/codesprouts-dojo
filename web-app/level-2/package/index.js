@@ -30,7 +30,9 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
 app.use((req, res, next) => {
+  console.log(req.url)
   req.url = req.url.replace(/.*((\/static\/(js|css)\/.*)|favicon[.]ico|logo192[.]png|manifest[.]json)$/g, `$1`)
+  console.log(req.url)
   next();
 });
 
